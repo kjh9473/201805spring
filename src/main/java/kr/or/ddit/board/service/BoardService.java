@@ -11,6 +11,7 @@ import kr.or.ddit.board.dao.BoardDaoInf;
 import kr.or.ddit.board.model.BoardVo;
 
 //annotation 통해 빈 스캔이 될수 있도록 설정
+
 @Service("boardService")
 public class BoardService implements BoardServiceInf{
 	@Resource(name="boardDao")

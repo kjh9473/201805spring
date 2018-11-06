@@ -19,21 +19,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations= {"classpath:kr/or/ddit/config/spring/servlet-context.xml",
-		"classpath:kr/or/ddit/config/spring/root-context.xml"})
-@WebAppConfiguration
-public class MvcControllerTest {
+import kr.or.ddit.test.ControllerTestConfig;
+
+public class MvcControllerTest extends ControllerTestConfig{
 	
-	@Autowired
-	private WebApplicationContext ctx; // spring ioc 컨테이너
-
-	private MockMvc mockMvc; // dispatcher servlet(front controller)
-
-	@Before
-	public void setup() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
-	}
 	
 	@Test
 	public void mvcViewTest() throws Exception {

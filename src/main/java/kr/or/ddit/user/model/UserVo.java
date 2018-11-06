@@ -142,5 +142,7 @@ public class UserVo implements HttpSessionBindingListener{
 		
 		
 	}
+
+	
 	
 }
