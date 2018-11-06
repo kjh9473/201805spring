@@ -23,7 +23,7 @@ public class JavaConfig {
 	@Bean(name={"boardService"})
 	public BoardServiceInf boardService() {
 		BoardServiceInf boardService = new BoardService();
-		boardService.setBoardDao(getBoardDao());
+//		boardService.setBoardDao(getBoardDao());
 		
 		return boardService;
 	}

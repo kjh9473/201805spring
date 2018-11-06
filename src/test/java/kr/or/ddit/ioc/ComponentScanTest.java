@@ -73,16 +73,16 @@ public class ComponentScanTest {
 		assertNotNull(boardService);
 	}
 	
-	@Test
-	public void boardTest() {
-		/***Given***/
-		
-
-		/***When***/
-		
-		/***Then***/
-		assertEquals(true,boardDao==boardService.getBoardDao());
-
-	}
+//	@Test
+//	public void boardTest() {
+//		/***Given***/
+//		
+//
+//		/***When***/
+//		
+//		/***Then***/
+//		assertEquals(true,boardDao==boardService.getBoardDao());
+//
+//	}
 
 }
