@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<%@ include file="/common/basicLib.jsp"%>
+<%@ include file="/WEB-INF/view/common/basicLib.jsp"%>
 <link href="/css/signin.css" rel="stylesheet">
 <script type="text/javascript">
 	$(document).ready(function () {

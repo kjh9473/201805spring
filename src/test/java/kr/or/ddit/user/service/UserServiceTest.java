@@ -10,6 +10,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
+import kr.or.ddit.test.ServiceDaoTestConfig;
 import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.util.model.PageVo;
 
@@ -19,7 +22,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UserServiceTest {
+public class UserServiceTest extends ServiceDaoTestConfig{
 	
 	// junit 실행주기
 	// @BeforeClass 이 적용된 메서드 실행(최초 1회) 단, static 메서드로 선언
@@ -34,6 +37,7 @@ public class UserServiceTest {
 	// before -> Test( selectUser(UserVo) ) -> after
 	// afterClass
 	
+	@Resource(name="userService")
 	private UserServiceInf userService;
 	private final String TEST_USER_ID = "testUser";
 	
@@ -50,7 +54,6 @@ public class UserServiceTest {
 	@Before
 	public void before(){
 		System.out.println("before");
-		userService = new UserService();
 		userService.deleteUser(TEST_USER_ID);
 	}
 	
@@ -65,7 +68,6 @@ public class UserServiceTest {
 
 		/***When : 어떤 동작 수행(메소드)***/
 		List<UserVo> list = userService.selectUserAll();
-		System.out.println("list : "+list);
 		
 		/***Then : 결과가 어떠해야하는지 정의***/
 		assertEquals(105, list.size());

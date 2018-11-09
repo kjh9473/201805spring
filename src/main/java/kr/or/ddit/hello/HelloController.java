@@ -135,6 +135,12 @@ public class HelloController {
 		writer.write("</html>");
 	}
 	
+	// http://localhost:8081/hello/exception
+	@RequestMapping("/exception")
+	public String view() {
+		throw new ArithmeticException();
+	}
+	
 	
 	
 	

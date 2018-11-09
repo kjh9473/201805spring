@@ -1,15 +1,21 @@
 package kr.or.ddit.user.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class UserVo implements HttpSessionBindingListener{
+public class UserVoJsr303 implements HttpSessionBindingListener{
+	
+	
+	@Length(min=5,max=12)
+	@NotEmpty
 	private String userId;
+	@NotEmpty
 	private String name;
 	private String alias;
 	private String pass;
@@ -24,24 +30,26 @@ public class UserVo implements HttpSessionBindingListener{
 	private int rnum;
 	
 	
-	public UserVo() {
+	public UserVoJsr303() {
 	}
 	
-	public UserVo(String userId, String name, String alias, Date birth) {
+	public UserVoJsr303(String userId, String name, String alias, Date birth) {
 		super();
 		this.userId = userId;
 		this.name = name;
 		this.alias = alias;
 		this.birth = birth;
 	}
-
+	
 	public int getRnum() {
 		return rnum;
 	}
+	
 
 	public void setRnum(int rnum) {
 		this.rnum = rnum;
 	}
+
 
 	public String getPass() {
 		return pass;
@@ -105,11 +113,6 @@ public class UserVo implements HttpSessionBindingListener{
 	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
-	public String getFormattedBirth() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(birth);
-	}
-	
 	public String getUserId() {
 		return userId;
 	}

@@ -167,7 +167,7 @@ public class UserDaoTest extends ServiceDaoTestConfig{
 		/***Given***/
 		// userVo 생성
 		UserVo userVo = new UserVo();
-		userVo.setProfile("null");
+//		userVo.setProfile("null");
 		userVo.setUserId("testUser");
 		userVo.setName("testName");
 		userVo.setPass("testPass");
